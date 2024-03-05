@@ -3,9 +3,9 @@ entries:
   nimbus:
   - apiVersion: v2
     appVersion: 0.1.1
-    created: "2024-02-20T07:01:54.390904941Z"
+    created: "2024-03-05T06:33:39.040481621Z"
     description: A Helm chart for Nimbus
-    digest: f5ce7bee15c4fce21bcc1a1184ee9992b3e9058a64be9337cbad283cd669a812
+    digest: ffd0110a6dbf5f4ca428cc7f2dd2994b681603300d054723044e2fb197015e77
     name: nimbus
     type: application
     urls:
@@ -24,9 +24,9 @@ entries:
   nimbus-kubearmor:
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2024-02-20T07:01:54.391181115Z"
+    created: "2024-03-05T06:33:39.04076589Z"
     description: A Helm chart for KubeArmor Security Engine as an adapter for Nimbus.
-    digest: 8d224737784e3bf70580bd24161734111916748f71e01b2a4e57fc4f06a511a0
+    digest: 68bca97111f4ae056990f25ceadecf6dc0bffbf7a491b3f4acd902f3dbb97e8f
     name: nimbus-kubearmor
     type: application
     urls:
@@ -55,9 +55,9 @@ entries:
   nimbus-netpol:
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2024-02-20T07:01:54.391408247Z"
+    created: "2024-03-05T06:33:39.041000075Z"
     description: A Helm chart for Kubernetes NetworkPolicy as an adapter for Nimbus.
-    digest: a97481ff820fc6f99e5cb227c249f0e356d1a0534a9bb2d22c135f6860eeffad
+    digest: 2ee822b36a892cef6138f14aa7efc4031b3779d829cd6eb17e3617e10499743f
     name: nimbus-netpol
     type: application
     urls:
@@ -83,4 +83,4 @@ entries:
     urls:
     - https://5gsec.github.io/charts/nimbus-netpol-0.1.0.tgz
     version: 0.1.0
-generated: "2024-02-20T07:01:54.39040448Z"
+generated: "2024-03-05T06:33:39.039999284Z"
