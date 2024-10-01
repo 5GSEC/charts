@@ -1,0 +1,49 @@
+name: Release Helm Chart
+
+on:
+  release:
+    types: [ published ]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag which has to be updated"
+        type: "string"
+        required: true
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: "5GSEC/nimbus"
+
+      - uses: azure/setup-helm@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update Chart.yaml
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          STABLE_VERSION=${{ inputs.tag }}
+          sed -i -e "s/appVersion:.*/appVersion: $STABLE_VERSION/g" deployments/*/Chart.yaml
+          sed -i -e "s/version:.*/version: $STABLE_VERSION/g" deployments/*/Chart.yaml
+
+      - name: Update Chart.yaml
+        if: ${{ github.event_name == 'release' }}
+        run: |
+          STABLE_VERSION=${{ github.event.release.tag_name }}
+          sed -i -e "s/appVersion:.*/appVersion: $STABLE_VERSION/g" deployments/helm/*/Chart.yaml
+          sed -i -e "s/version:.*/version: $STABLE_VERSION/g" deployments/helm/*/Chart.yaml
+
+      - name: Publish Helm chart
+        uses: stefanprodan/helm-gh-pages@master
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          charts_dir: deployments/
+          branch: gh-pages
+          commit_username: "github-actions[bot]"
+          commit_email: "github-actions[bot]@users.noreply.github.com"
