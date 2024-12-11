@@ -223,4 +223,15 @@ entries:
     urls:
     - https://5gsec.github.io/charts/nimbus-netpol-0.1.0.tgz
     version: 0.1.0
-generated: "2024-10-03T08:22:02.606188325Z"
+  sentryflow:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2024-12-11T04:30:39.782066366Z"
+    description: A Helm chart for SentryFlow
+    digest: 336be4fe62de36c71dccb33213f4c1f8ee0d146804d9eb190ce66e4cfaf0482f
+    name: sentryflow
+    type: application
+    urls:
+    - https://5gsec.github.io/charts/sentryflow-0.1.0.tgz
+    version: 0.1.0
+generated: "2024-12-11T04:30:39.780534722Z"
